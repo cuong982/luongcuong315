@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -156,4 +157,4 @@ EMAIL_HOST_USER = "tuank60lab411@gmail.com"
 EMAIL_HOST_PASSWORD = "anhtuan1997"
 EMAIL_PORT = 587
 # Allow host
-ALLOWED_HOSTS = ['deploycortek.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['webrbicortex.herokuapp.com','127.0.0.1']
