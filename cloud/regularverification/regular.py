@@ -1,5 +1,5 @@
 import os,sys
-from msilib.schema import Component
+#from msilib.schema import Component
 
 from django.core.wsgi import get_wsgi_application
 
