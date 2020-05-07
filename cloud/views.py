@@ -3396,7 +3396,7 @@ def signin(request):
             return render(request,'Home/index.html',{'error':error})
     except Exception as e:
         print(e)
-        raise Http404
+        # raise Http404
 def logout(request):
     try:
         del request.session['id']
