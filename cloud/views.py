@@ -3359,9 +3359,9 @@ def RegularVerification():
 def signin(request):
     error = ''
     try:
-        t1 = threading.Thread(target=RegularVerification)
-        t1.setDaemon(True)
-        t1.start()
+        # t1 = threading.Thread(target=RegularVerification)
+        # t1.setDaemon(True)
+        # t1.start()
         if request.session.has_key('id'):
             if request.session['kind']=='citizen':
                 return redirect('citizenHome')
