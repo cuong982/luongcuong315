@@ -22,7 +22,7 @@ import django.views.static
 from RbiCloud import settings
 
 urlpatterns = [
-    # path('static/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.STATIC_ROOT, 'show_indexes': settings.DEBUG}),
+    path('static/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.STATIC_ROOT, 'show_indexes': settings.DEBUG}),
     ########################## Base ################################
     path('admin/', admin.site.urls),
     path('', views.signin, name='home'),
