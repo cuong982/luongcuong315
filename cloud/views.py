@@ -3393,7 +3393,7 @@ def signin(request):
                         return redirect('manager',3)
                 else:
                     error="Tài khoản hoặc mật khẩu không đúng"
-            return render(request,'Home/index.html',{'error':error})
+            return render(request,'Home/index.html')
     except Exception as e:
         print(e)
 def logout(request):
