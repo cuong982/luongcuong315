@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="969df32f-dbab-4c8d-aaae-0e8a51699f1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseBusiness.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseBusiness.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseFacility.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseFacility.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/BaseUI/BaseWeb/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/BaseUI/BaseWeb/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cloud/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="3396" column="26" lean-forward="true" selection-start-line="3396" selection-start-column="26" selection-end-line="3396" selection-end-column="26" />
+            <state relative-caret-position="279">
+              <caret line="3397" column="16" lean-forward="true" selection-start-line="3397" selection-start-column="16" selection-end-line="3397" selection-end-column="16" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -57,18 +55,14 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Home/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/BaseUI/BaseWeb/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="816">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -86,11 +80,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cloud/views.py" />
-        <option value="$PROJECT_DIR$/templates/Home/index.html" />
         <option value="$PROJECT_DIR$/templates/BaseUI/BaseWeb/base.html" />
         <option value="$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseFacility.html" />
         <option value="$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseBusiness.html" />
+        <option value="$PROJECT_DIR$/templates/Home/index.html" />
+        <option value="$PROJECT_DIR$/cloud/views.py" />
       </list>
     </option>
   </component>
@@ -200,11 +194,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18824404" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18824404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.21767594" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -219,16 +213,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cloud/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="3396" column="26" lean-forward="true" selection-start-line="3396" selection-start-column="26" selection-end-line="3396" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/BaseUI/BaseFacility/baseFacility.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -250,17 +234,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Home/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/BaseUI/BaseWeb/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        <state relative-caret-position="816">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/BaseUI/BaseWeb/base.html">
+    <entry file="file://$PROJECT_DIR$/templates/Home/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="279">
+          <caret line="3397" column="16" lean-forward="true" selection-start-line="3397" selection-start-column="16" selection-end-line="3397" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
