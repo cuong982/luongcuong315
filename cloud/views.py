@@ -3359,9 +3359,9 @@ def RegularVerification():
 def signin(request):
     error = ''
     try:
-        # t1 = threading.Thread(target=RegularVerification)
-        # t1.setDaemon(True)
-        # t1.start()
+        t1 = threading.Thread(target=RegularVerification)
+        t1.setDaemon(True)
+        t1.start()
         if request.session.has_key('id'):
             if request.session['kind']=='citizen':
                 return redirect('citizenHome')
@@ -3393,9 +3393,10 @@ def signin(request):
                         return redirect('manager',3)
                 else:
                     error="Tài khoản hoặc mật khẩu không đúng"
-            return render(request,'Home/index.html')
+            return render(request,'Home/index.html',{'error':error})
     except Exception as e:
         print(e)
+        raise Http404
 def logout(request):
     try:
         del request.session['id']

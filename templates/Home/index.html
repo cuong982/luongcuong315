@@ -1,5 +1,5 @@
 {% extends 'BaseUI/BaseWeb/base.html' %}
-{% load static %}
+{% load staticfiles %}
 {% load widget_tweaks %}
 
 {% block title %}Home{% endblock %}
@@ -66,6 +66,13 @@
   </div>
 </form>
 
-
+   <script> {# Notification Account or pass false#}
+    var error ='{{ error }}';
+        if(error!=''){
+            if (confirm("{{ error }}\nVui lòng đăng nhập lại !")) {
+                $("#formsignin").modal();
+            }
+        }
+    </script>
 
 {% endblock %}
