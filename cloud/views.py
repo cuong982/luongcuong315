@@ -27,7 +27,7 @@ from cloud.process.RBI import fastCalulate as ReCalculate
 from django.db.models import Q
 from cloud.regularverification.regular import REGULAR
 import threading
-
+import requests
 
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.sites.shortcuts import get_current_site
