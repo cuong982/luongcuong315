@@ -1,9 +1,0 @@
-.active:active {
-  color: red;
-}
-.focus:focus {
-  color: red;
-}
-:target {
-  color: red;
-}
