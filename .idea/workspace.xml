@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="969df32f-dbab-4c8d-aaae-0e8a51699f1d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/RbiCloud/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RbiCloud/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RbiCloud/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RbiCloud/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +12,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RbiCloud/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+            <state relative-caret-position="204">
+              <caret line="24" column="126" lean-forward="true" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+              <folding>
+                <element signature="e#632#664#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RbiCloud/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -36,7 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/404/404.html" />
         <option value="$PROJECT_DIR$/templates/BaseUI/BaseCitizen/baseCitizen.html" />
         <option value="$PROJECT_DIR$/templates/BaseUI/BaseCitizen/baseCitizenHome.html" />
         <option value="$PROJECT_DIR$/templates/BaseUI/BaseCitizen/baseRiskSummary_Citizen.html" />
@@ -87,6 +98,7 @@
         <option value="$PROJECT_DIR$/templates/Messages/Messages_Inbox.html" />
         <option value="$PROJECT_DIR$/templates/Messages/Messages_Sent.html" />
         <option value="$PROJECT_DIR$/RbiCloud/urls.py" />
+        <option value="$PROJECT_DIR$/RbiCloud/settings.py" />
       </list>
     </option>
   </component>
@@ -394,9 +406,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/FacilityUI/proposal/SensorConnect.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/FacilityUI/risk_excel/tableExcel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -622,8 +631,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RbiCloud/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="68" lean-forward="true" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        <state relative-caret-position="204">
+          <caret line="24" column="126" lean-forward="true" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RbiCloud/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
         </state>
       </provider>
     </entry>
