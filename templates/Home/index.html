@@ -1,5 +1,6 @@
 {% extends 'BaseUI/BaseWeb/base.html' %}
 {% load staticfiles %}
+{% load static %}
 {% load widget_tweaks %}
 
 {% block title %}Home{% endblock %}
@@ -10,8 +11,8 @@
 {% endblock %}
 
 {% block navbar %}
-    <!--<a id="#signin" class="a-login" data-toggle="modal" data-target="#formsignin"><i class="fa fa-sign-in"></i></a>-->
-<!--{#    <a class="" href="{% url 'home' %}" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-home"></i></a>#}-->
+    <a id="#signin" class="a-login" data-toggle="modal" data-target="#formsignin"><i class="fa fa-sign-in"></i></a>
+{#    <a class="" href="{% url 'home' %}" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-home"></i></a>#}
 {% endblock %}
 
 {% block content %}
@@ -27,7 +28,6 @@
             <button class="index-red-btn" onclick="location.href='{% url 'accountcitizen' %}'"><i class="fa fa-group" >&emsp;I'm Citizen</i></button>
             <button class="index-btn" onclick="location.href='{% url 'accountbusiness' %}'"><i class="fa fa-gear">&emsp;I'm Business</i></button>
             <button class="index-btn" onclick="location.href='{% url 'accountmanagement' %}'"><i class="fa fa-gear">&emsp;I'm Management</i></button>
-            <button class="index-red-btn" onclick="location.href='{% url 'signin' %}'"><i class="fa fa-group" >&emsp;I'm Citizen</i></button>
         </div>
 <form method="post">
 {% csrf_token %}
@@ -51,7 +51,7 @@
               <input type="text" name="txtuser" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
             </div>
             <div class="input-group" style="margin-top: 12px">
-              <span class="input-group-addon" id="sizing-addon2" style="background-color: #4575B7;border-color:#4575B7;color: white;font-size: 18px">
+              <span class="input-group-addon" id="sizing-addon1" style="background-color: #4575B7;border-color:#4575B7;color: white;font-size: 18px">
                   <i class="fa fa-lock"></i>
               </span>
               <input type="password" name="txtpass" class="form-control" placeholder="Password" aria-describedby="basic-addon1">

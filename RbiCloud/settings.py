@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import django_heroku
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,8 +73,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'RbiCloud.wsgi.application'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -89,6 +87,7 @@ DATABASES = {
          'PASSWORD': '333c72b0',
          'HOST': 'us-cdbr-east-06.cleardb.net',
          'PORT': '3306',
+         # 'OPTIONS': {'ssl': {'ca':'/cleardb-ca.pem/', 'cert':'/bf80840e448c33-cert.pem/', 'key':'/bf80840e448c33-key.pem/'},},
      }
   }
 
@@ -126,7 +125,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-#Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -157,4 +156,4 @@ EMAIL_HOST_USER = "tuank60lab411@gmail.com"
 EMAIL_HOST_PASSWORD = "anhtuan1997"
 EMAIL_PORT = 587
 # Allow host
-ALLOWED_HOSTS = ['webrbicortex.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['cortekrbi.herokuapp.com','127.0.0.1']

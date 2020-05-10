@@ -22,11 +22,10 @@ import django.views.static
 from RbiCloud import settings
 
 urlpatterns = [
-    path('static/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.STATIC_ROOT, 'show_indexes': settings.DEBUG}),
+    # path('static/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.STATIC_ROOT, 'show_indexes': settings.DEBUG}),
     ########################## Base ################################
     path('admin/', admin.site.urls),
-    path('', views.Home, name='home'),
-    path('signin/',views.signin, name='signin'),
+    path('', views.signin, name='home'),
     path('basecitizen/',views.Base_citizen,name='basecitizen'),
     path('basemanagement/', views.base_manager, name= 'basemanager'),
     path('basebusiness/',views.base_business,name='basebusiness'),
@@ -39,8 +38,8 @@ urlpatterns = [
     path('manufacture/', views.base_manufacture, name= 'manufacture'),
     ########################## Facility UI################################
     path('inspection/plan/<int:siteID>/', views.InpsectionPlan, name='inspectionPlan'),
-    path('inspection/plan/<int:siteID>/InpsectionPlan<str:name>/InpsectionPlan<str:date>/', views.InpsectionPlan,name='inspectionPlan'),
-    path('add/<int:siteID>/<int:facilityID>/<int:equipID>/<str:name>/<str:date>/plan/', views.AdddInssepctionPlan,name='addInspectionPlan'),
+    path('inspection/plan/<int:siteID>/InpsectionPlan<str:name>/InpsectionPlan<str:date>/', views.InpsectionPlan, name='inspectionPlan'),
+    path('add/<int:siteID>/<str:name>/<str:date>/plan/', views.AdddInssepctionPlan, name='addInspectionPlan'),
     path('create/<int:siteID>/plan/', views.CreateInspectionPlan, name='createInspectionPlan'),
     path('facilities/display/<int:siteID>/', views.ListFacilities, name='facilitiesDisplay'),
     path('facilities/<int:siteID>/new/', views.NewFacilities, name='facilitiesNew'),

@@ -1,5 +1,6 @@
 import os,sys
 from django.core.wsgi import get_wsgi_application
+from sympy.polys.agca import modules
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'RbiCloud.settings'
 application = get_wsgi_application()
@@ -502,6 +503,7 @@ def calculateTank(proposalID):
         damageMachinsm = models.RwDamageMechanism.objects.filter(id_dm=proposalID)
         countRefullfc = models.RwFullFcof.objects.filter(id=proposalID)
         chart = models.RwDataChart.objects.filter(id=proposalID)
+        FullFCof = models.RwFullFcof.objects.filter(id=proposalID)
 
         comp = models.ComponentMaster.objects.get(componentid=rwassessment.componentid_id)
         eq = models.EquipmentMaster.objects.get(equipmentid=rwassessment.equipmentid_id)
@@ -510,7 +512,7 @@ def calculateTank(proposalID):
         comptype = models.ComponentType.objects.get(componenttypeid=comp.componenttypeid_id)
 
         isshell = False
-        if comp.componenttypeid_id == 8 or comp.componenttypeid_id == 14:
+        if comp.componenttypeid_id == 9 or comp.componenttypeid_id == 13:
             isshell = True
         if not rwcoat.externalcoating:
             dm_cal = DM_CAL.DM_CAL(ComponentNumber=str(comp.componentnumber),
@@ -723,9 +725,16 @@ def calculateTank(proposalID):
                                     P_offsite=rwstream.fluidgooffsitepercent,
                                     MATERIAL_COST=rwmaterial.costfactor,
                                     API_COMPONENT_TYPE_NAME=models.ApiComponentType.objects.get(apicomponenttypeid= comp.apicomponenttypeid).apicomponenttypename,
-                                    PRODUCTION_COST=rwinputca.productioncost)
+                                    PRODUCTION_COST=rwinputca.productioncost,
+                                    Soil_type=rwequipment.typeofsoil,
+                                    TANK_FLUID=rwstream.tankfluidname,
+                                    CHT=rwcomponent.shellheight,
+                                    EQUIPMENT_COST = FullFCof.equipcost)
             if countRwcatank.count() != 0:
                 rwcatank = models.RwCaTank.objects.get(id=proposalID)
+                rwcatank.hydraulic_water = cacal.k_h_water()
+                rwcatank.hydraulic_fluid = cacal.k_h_prod()
+                rwcatank.seepage_velocity = cacal.vel_s_prod()
                 rwcatank.flow_rate_d1 = cacal.W_n_Tank(1)
                 rwcatank.flow_rate_d2 = cacal.W_n_Tank(2)
                 rwcatank.flow_rate_d3 = cacal.W_n_Tank(3)
@@ -738,9 +747,9 @@ def calculateTank(proposalID):
                 rwcatank.release_volume_leak_d2 = cacal.Bbl_leak_n(2)
                 rwcatank.release_volume_leak_d3 = cacal.Bbl_leak_n(3)
                 rwcatank.release_volume_leak_d4 = cacal.Bbl_leak_n(4)
-                rwcatank.release_volume_rupture = cacal.Bbl_rupture_release()
-                rwcatank.liquid_height = cacal.FLUID_HEIGHT
-                rwcatank.volume_fluid = cacal.Bbl_total_shell()
+                rwcatank.release_volume_rupture = cacal.Bbl_rupture_n()
+                rwcatank.liquid_height = cacal.LHT_above(3)
+                rwcatank.volume_fluid = cacal.Lvol_abouve(3)
                 rwcatank.time_leak_ground = cacal.ld_tank(4)
                 rwcatank.volume_subsoil_leak_d1 = cacal.Bbl_leak_release()
                 rwcatank.volume_subsoil_leak_d4 = cacal.Bbl_rupture_release()
@@ -764,10 +773,14 @@ def calculateTank(proposalID):
                 rwcatank.consequencecategory = cacal.FC_Category(cacal.FC_total_shell())
                 rwcatank.save()
             else:
-                rwcatank = models.RwCaTank(id=rwassessment, flow_rate_d1=cacal.W_n_Tank(1),
+                rwcatank = models.RwCaTank(id=rwassessment, hydraulic_water = cacal.k_h_water(),
+                                           hydraulic_fluid = cacal.k_h_prod(),
+                                           seepage_velocity=cacal.vel_s_prod(),
+                                           flow_rate_d1=cacal.W_n_Tank(1),
                                            flow_rate_d2=cacal.W_n_Tank(2),
                                            flow_rate_d3=cacal.W_n_Tank(3),
-                                           flow_rate_d4=cacal.W_n_Tank(4), leak_duration_d1=cacal.ld_tank(1),
+                                           flow_rate_d4=cacal.W_n_Tank(4),
+                                           leak_duration_d1=cacal.ld_tank(1),
                                            leak_duration_d2=cacal.ld_tank(2),
                                            leak_duration_d3=cacal.ld_tank(3), leak_duration_d4=cacal.ld_tank(4),
                                            release_volume_leak_d1=cacal.Bbl_leak_n(1),
@@ -775,8 +788,8 @@ def calculateTank(proposalID):
                                            release_volume_leak_d3=cacal.Bbl_leak_n(3),
                                            release_volume_leak_d4=cacal.Bbl_leak_n(4),
                                            release_volume_rupture=cacal.Bbl_rupture_release(),
-                                           liquid_height=cacal.FLUID_HEIGHT,
-                                           volume_fluid=cacal.Bbl_total_shell(),
+                                           liquid_height=cacal.LHT_above(3),
+                                           volume_fluid=cacal.Lvol_abouve(3),
                                            time_leak_ground=cacal.ld_tank(4),
                                            volume_subsoil_leak_d1=cacal.Bbl_leak_release(),
                                            volume_subsoil_leak_d4=cacal.Bbl_rupture_release(),
@@ -1060,7 +1073,7 @@ def ReCalculate(proposalID):
     try:
         rwAss = models.RwAssessment.objects.get(id=proposalID)
         component = models.ComponentMaster.objects.get(componentid=rwAss.componentid_id)
-        if component.componenttypeid_id == 8 or component.componenttypeid_id == 12 or component.componenttypeid_id == 14 or component.componenttypeid_id == 15:
+        if component.componenttypeid_id == 9 or component.componenttypeid_id == 12 or component.componenttypeid_id == 13 or component.componenttypeid_id == 15:
             isTank = 1
         else:
             isTank = 0
