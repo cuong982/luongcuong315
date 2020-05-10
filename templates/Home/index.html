@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block navbar %}
-    <a id="#signin" class="a-login" data-toggle="modal" data-target="#formsignin"><i class="fa fa-sign-in"></i></a>
+    <!--<a id="#signin" class="a-login" data-toggle="modal" data-target="#formsignin"><i class="fa fa-sign-in"></i></a>-->
 <!--{#    <a class="" href="{% url 'home' %}" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-home"></i></a>#}-->
 {% endblock %}
 
@@ -27,6 +27,7 @@
             <button class="index-red-btn" onclick="location.href='{% url 'accountcitizen' %}'"><i class="fa fa-group" >&emsp;I'm Citizen</i></button>
             <button class="index-btn" onclick="location.href='{% url 'accountbusiness' %}'"><i class="fa fa-gear">&emsp;I'm Business</i></button>
             <button class="index-btn" onclick="location.href='{% url 'accountmanagement' %}'"><i class="fa fa-gear">&emsp;I'm Management</i></button>
+            <button class="index-red-btn" onclick="location.href='{% url 'signin' %}'"><i class="fa fa-group" >&emsp;I'm Citizen</i></button>
         </div>
 <form method="post">
 {% csrf_token %}

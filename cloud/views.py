@@ -3393,10 +3393,15 @@ def signin(request):
                         return redirect('manager',3)
                 else:
                     error="Tài khoản hoặc mật khẩu không đúng"
-            return render(request,'Home/index.html',{'error':error})
+            return render(request,'Home/signin.html',{'error':error})
     except Exception as e:
         print(e)
         # raise Http404
+def Home(request):
+    if request.method == 'POST':
+        print("1")
+        redirect('signin')
+    return render(request, 'Home/index.html')
 def logout(request):
     try:
         del request.session['id']
